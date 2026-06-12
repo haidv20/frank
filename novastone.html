@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;scroll-behavior:smooth}
+html,body{overflow-x:hidden}
 body{background:#f5f7fb;color:#1f2937}
 .progress{position:fixed;top:0;left:0;height:5px;background:#ff6a00;width:0;z-index:9999}
 .sidebar{position:fixed;left:0;top:0;width:260px;height:100vh;background:#0f172a;padding:25px;overflow:auto}
@@ -35,11 +36,11 @@ th,td{border:1px solid #ddd;padding:12px;word-break:break-word}
 th{background:#0f172a;color:#fff}
 footer{text-align:center;padding:20px;color:#64748b}
 .mobile-nav{display:none;position:sticky;top:0;z-index:999;background:#ffffffee;padding:12px 20px;border-bottom:1px solid #e2e8f0;backdrop-filter:blur(10px)}
-.mobile-nav a{display:inline-block;margin-right:12px;color:#0f172a;text-decoration:none;padding:8px 10px;border-radius:10px;transition:.25s}
+.mobile-nav a{display:inline-flex;margin-right:12px;color:#0f172a;text-decoration:none;padding:8px 10px;border-radius:10px;transition:.25s;white-space:nowrap}
 .mobile-nav a:hover{background:#ff6a00;color:#fff}
-#langToolbar{position:fixed;top:15px;right:20px;z-index:99999;background:white;padding:10px 14px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
-#langToolbar button{margin-left:8px}
-@media(max-width:900px){.sidebar{display:none}.main{margin-left:0;padding:20px}.hero{padding:28px 20px}.hero h1{font-size:clamp(2rem,5vw,2.6rem)}.hero p{font-size:1rem}.section{padding:20px}.card{padding:18px;margin:14px 0}.mobile-nav{display:block}.mobile-nav a{margin-bottom:8px}.fade-in{opacity:1;transform:none}.#langToolbar{position:fixed;top:10px;left:10px;right:auto;z-index:99999;padding:10px 12px}.mobile-nav{padding:10px 16px}}</style>
+#langToolbar{position:fixed;top:15px;right:20px;z-index:99999;background:white;padding:10px 14px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.15);max-width:calc(100% - 40px);overflow:hidden}
+#langToolbar button{margin-left:8px;white-space:nowrap}
+@media(max-width:900px){.sidebar{display:none}.main{margin-left:0;padding:20px}.hero{padding:28px 20px}.hero h1{font-size:clamp(2rem,5vw,2.6rem)}.hero p{font-size:1rem}.section{padding:20px}.card{padding:18px;margin:14px 0}.mobile-nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px;width:100%;padding:10px 16px}.mobile-nav a{flex:1 1 auto;white-space:normal;margin:0}.fade-in{opacity:1;transform:none}#langToolbar{position:fixed;top:10px;left:10px;right:10px;width:auto;max-width:none;padding:10px 12px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}}</style>
 
 <style>
 body{
