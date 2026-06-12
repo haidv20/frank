@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NOVA STONE FY2026 - Báo Cáo Đề Xuất Phát Triển</title>
+<title>NOVA STONE 3 Years - Báo Cáo Đề Xuất Phát Triển</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 * {
@@ -11,10 +11,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
-  scroll-behavior: smooth;
-}
-html {
-  scroll-behavior: smooth;
 }
 body {
   min-height: 100vh;
@@ -24,15 +20,6 @@ body {
     radial-gradient(circle at bottom left, rgba(15,23,42,.08), transparent 25%),
     #f5f7fb;
   color: #1f2937;
-}
-.progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5px;
-  width: 0;
-  background: #ff6a00;
-  z-index: 9999;
 }
 .sidebar {
   position: fixed;
@@ -101,12 +88,11 @@ body {
   border-radius: 18px;
   margin-bottom: 25px;
   box-shadow: 0 10px 25px rgba(0,0,0,.06);
-  transition: all .5s ease;
+  transition: box-shadow .3s ease;
   backdrop-filter: blur(10px);
 }
 .section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0,0,0,.10);
+  box-shadow: 0 14px 30px rgba(0,0,0,.08);
 }
 .section h2 {
   border-left: 5px solid #ff6a00;
@@ -119,11 +105,10 @@ body {
   padding: 20px;
   margin: 15px 0;
   background: #fafafa;
-  transition: all .35s ease;
+  transition: box-shadow .25s ease, border-color .25s ease;
 }
 .card:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 15px 35px rgba(255,106,0,.12);
+  box-shadow: 0 10px 20px rgba(255,106,0,.12);
   border-color: #ff6a00;
 }
 .card h3 {
@@ -231,15 +216,6 @@ footer {
 #langToolbar button {
   white-space: nowrap;
 }
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all .8s ease;
-}
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
 .stat-bar {
   height: 10px;
   background: #e5e7eb;
@@ -308,34 +284,34 @@ footer {
 </head>
 <body>
 
-<div id="langToolbar" style="position:fixed;top:15px;right:20px;z-index:99999;background:white;padding:10px 14px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.15)">
+<div id="langToolbar" role="toolbar">
 <b>Language:</b>
-<button onclick="changeLang('vi')" style="margin-left:8px">🇻🇳 Tiếng Việt</button>
+<button onclick="changeLang('vi')">🇻🇳 Tiếng Việt</button>
 <button onclick="changeLang('en')">🇺🇸 English</button>
 <button onclick="changeLang('zh-CN')">🇨🇳 中文</button>
 </div>
-<div id="google_translate_element" style="display:none"></div>
+<aside id="google_translate_element" hidden></aside>
 
-<div class="progress" id="progress"></div>
+<nav class="sidebar" aria-label="Main navigation">
 
-<div class="sidebar">
+<img src="https://sc04.alicdn.com/kf/A0a0b57d179d94be89ae4e8d24003ef25E.png" alt="NOVA Stone logo" style="width:100%;border-radius:10px;margin-bottom:15px">
+<ul>
+  <li><a href="#conclusion">Tối Ưu Chi Phí Đầu Tư</a></li>
+  <li><a href="#ads">Phương Án Đề Xuất</a></li>
+  <li><a href="#star">Nhiệm vụ Star Rating Bonus</a></li>
+  <li><a href="#products">Phân Loại Bài Đăng Theo Người Mua</a></li>
+</ul>
+</nav>
 
-<img src="https://sc04.alicdn.com/kf/A0a0b57d179d94be89ae4e8d24003ef25E.png" alt="lolo" style="width:100%;border-radius:10px;margin-bottom:15px">
-<a href="#conclusion">Tối Ưu Chi Phí Đầu Tư</a>
-<a href="#ads">Phương Án Đề Xuất</a>
-<a href="#star">Nhiệm vụ Star Rating Bonus</a>
-<a href="#products">Phân Loại Bài Đăng Theo Người Mua</a>
-</div>
-
-<div class="main">
-<div class="hero">
+<main class="main">
+<header class="hero">
 <h1>BÁO CÁO ĐỀ XUẤT PHÁT TRIỂN NOVA STONE NĂM THỨ 3 2026 - 2027</h1>
 <p>Tối ưu Alibaba.com | Tăng trưởng Traffic | Trade Assurance | Verified Supplier</p>
-</div>
+</header>
 
 
 
-<div class="section fade-in" id="conclusion">
+<section class="section" id="conclusion">
 <h2>1. TỐI ƯU CHI PHÍ ĐẦU TƯ</h2>
 
 <p>Về bản chất, nếu NOVA STONE tiếp tục sử dụng Alibaba.com trong năm tiếp theo, chi phí gia hạn Verified Supplier là khoản đầu tư gần như chắc chắn sẽ phát sinh.</p>
@@ -421,7 +397,7 @@ Renew sớm tháng 06/2026 là phương án có tổng chi phí đầu tư thấ
 
 
 
-<div class="section fade-in" id="ads">
+<section class="section" id="ads">
 <h2>2. ADS + VERIFIED SUPPLIER PLAN</h2>
 
 <div class="card">
@@ -510,7 +486,7 @@ Tận dụng ngân sách quảng cáo trong giai đoạn chi phí traffic thấp
 </div>
 
 
-<div class="section fade-in" id="star">
+<section class="section" id="star">
 <h2>3. KẾ HOẠCH TĂNG SAO GIAN HÀNG</h2>
 <p>NOVA STONE đã có các đơn hàng sử dụng Trade Assurance. Đây là lợi thế giúp Alibaba.com ghi nhận dữ liệu giao dịch thực tế và tăng mức độ uy tín.</p>
 <ul>
@@ -530,7 +506,7 @@ Tận dụng ngân sách quảng cáo trong giai đoạn chi phí traffic thấp
 
 
 
-<div class="section fade-in" id="products">
+<section class="section" id="products">
 <h2>4. ĐĂNG THÊM SẢN PHẨM MỚI</h2>
 <p>Đăng tải thêm các sản phẩm theo từng nhóm Buyer nhằm giúp khách hàng tiếp cận đúng thông tin phù hợp với nhu cầu thực tế.</p>
 
@@ -710,42 +686,27 @@ Tận dụng ngân sách quảng cáo trong giai đoạn chi phí traffic thấp
 
 
 
-<div class="section fade-in glass">
+<section class="section glass">
 <h2>TỔNG QUAN HIỆU QUẢ ĐẦU TƯ</h2>
 <p>Minh hoạ trực quan lợi thế của phương án Renew sớm.</p>
 <div>Tiết kiệm chi phí</div>
 <div class="stat-bar"><div class="stat-fill" style="width:75%"></div></div>
 <div style="margin-top:15px">Khả năng tận dụng ưu đãi</div>
 <div class="stat-bar"><div class="stat-fill" style="width:95%"></div></div>
-</div>
+</section>
 <footer>
 
 Báo cáo đề xuất phát triển gian hàng NOVA STONE trên Alibaba.com – Năm thứ 3 (2026 - 2027) | Được chuẩn bị bởi A Hải (Frank) | Ngày: 12/06/2026
 </footer>
-</div>
+</main>
 
 <script>
-window.onscroll=function(){
-let win=document.documentElement.scrollTop;
-let h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-document.getElementById("progress").style.width=(win/h*100)+"%";
-}
-</script>
-
-<script>
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){entry.target.classList.add('show');}
-});
-},{threshold:.15});
-document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
-
 window.addEventListener('load',()=>{
-document.querySelectorAll('.stat-fill').forEach(el=>{
-const w=el.style.width;
-el.style.width='0';
-setTimeout(()=>el.style.width=w,400);
-});
+  document.querySelectorAll('.stat-fill').forEach(el=>{
+    const w = el.style.width;
+    el.style.width = '0';
+    setTimeout(()=> el.style.width = w, 400);
+  });
 });
 </script>
 
