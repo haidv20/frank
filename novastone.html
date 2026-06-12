@@ -22,15 +22,24 @@ body{background:#f5f7fb;color:#1f2937}
 .card{border:1px solid #e5e7eb;border-radius:15px;padding:20px;margin:15px 0;background:#fafafa}
 .card h3{color:#ff6a00;margin-bottom:10px}
 ul{padding-left:20px;line-height:1.8}
+img{max-width:100%;height:auto;display:block}
+button{font-family:'Inter',sans-serif;border:1px solid #d1d5db;background:#fff;color:#1f2937;padding:8px 12px;border-radius:10px;cursor:pointer;transition:.25s}
+button:hover{background:#ff6a00;color:#fff;border-color:transparent}
 .highlight{background:#fff4eb;border-left:5px solid #ff6a00;padding:15px;border-radius:8px;margin-top:15px}
 .badge{display:inline-block;background:#ff6a00;color:#fff;padding:6px 12px;border-radius:20px;margin-bottom:10px}
 .timeline-item{padding:10px 0 10px 20px;border-left:3px solid #ff6a00;margin-left:10px}
+.table-responsive{overflow-x:auto;margin-top:15px}
+.table-responsive table{min-width:700px}
 table{width:100%;border-collapse:collapse;margin-top:15px}
-th,td{border:1px solid #ddd;padding:12px}
+th,td{border:1px solid #ddd;padding:12px;word-break:break-word}
 th{background:#0f172a;color:#fff}
 footer{text-align:center;padding:20px;color:#64748b}
-@media(max-width:900px){.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:28px}}
-</style>
+.mobile-nav{display:none;position:sticky;top:0;z-index:999;background:#ffffffee;padding:12px 20px;border-bottom:1px solid #e2e8f0;backdrop-filter:blur(10px)}
+.mobile-nav a{display:inline-block;margin-right:12px;color:#0f172a;text-decoration:none;padding:8px 10px;border-radius:10px;transition:.25s}
+.mobile-nav a:hover{background:#ff6a00;color:#fff}
+#langToolbar{position:fixed;top:15px;right:20px;z-index:99999;background:white;padding:10px 14px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+#langToolbar button{margin-left:8px}
+@media(max-width:900px){.sidebar{display:none}.main{margin-left:0;padding:20px}.hero{padding:28px 20px}.hero h1{font-size:clamp(2rem,5vw,2.6rem)}.hero p{font-size:1rem}.section{padding:20px}.card{padding:18px;margin:14px 0}.mobile-nav{display:block}.mobile-nav a{margin-bottom:8px}.fade-in{opacity:1;transform:none}.#langToolbar{position:fixed;top:10px;left:10px;right:auto;z-index:99999;padding:10px 12px}.mobile-nav{padding:10px 16px}}</style>
 
 <style>
 body{
@@ -117,6 +126,13 @@ backdrop-filter:blur(12px);
 <div id="google_translate_element" style="display:none"></div>
 
 <div class="progress" id="progress"></div>
+
+<div class="mobile-nav">
+  <a href="#products">Vận Hành</a>
+  <a href="#star">Star Rating Bonus</a>
+  <a href="#ads">Chiến Dịch Quảng Cáo</a>
+  <a href="#conclusion">Kết Luận</a>
+</div>
 
 <div class="sidebar">
 
@@ -334,6 +350,7 @@ backdrop-filter:blur(12px);
 
 <div class="card">
     <h3>Chu kỳ mua hàng ngành đá nhân tạo tại Mỹ</h3>
+<div class="table-responsive">
 <table>
 <tr><th>Giai đoạn</th><th>Trạng thái thị trường Mỹ</th><th>Hành động phù hợp trên Alibaba.com</th></tr>
 <tr>
@@ -392,11 +409,13 @@ Tận dụng ngân sách quảng cáo trong giai đoạn chi phí traffic thấp
 </ul>
 </div>
 
+<div class="table-responsive">
 <table>
 <tr><th>Hạng mục</th><th>Lợi ích chính</th></tr>
 <tr><td>Verified Supplier</td><td>Tăng uy tín, nhận ưu đãi KWA, Showcase và Super September</td></tr>
 <tr><td>Manual Campaign</td><td>Xây dựng traffic, RFQ và dữ liệu quảng cáo dài hạn</td></tr>
 </table>
+</div>
 
 </div>
 
@@ -406,6 +425,7 @@ Tận dụng ngân sách quảng cáo trong giai đoạn chi phí traffic thấp
 
 <p>Về bản chất, nếu NOVA STONE tiếp tục sử dụng Alibaba.com trong năm tiếp theo, chi phí gia hạn Verified Supplier là khoản đầu tư gần như chắc chắn sẽ phát sinh.</p>
 
+    <div class="table-responsive">
     <table>
     <tr>
     <th>Tiêu chí</th>
@@ -473,6 +493,7 @@ Tận dụng ngân sách quảng cáo trong giai đoạn chi phí traffic thấp
     <td>Cao hơn 3.000 USD</td>
     </tr>
     </table>
+    </div>
 
 <div class="highlight">
 <b>Chênh lệch giá trị đầu tư:</b><br><br>
