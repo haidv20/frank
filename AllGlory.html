@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿里巴巴店鋪績效報告 | 2026 Executive Summary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-blue: #3b82f6;
+            --brand-purple: #8b5cf6;
+            --bg-dark: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-dark);
+            color: #f1f5f9;
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .benchmark-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        .benchmark-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .kpi-icon {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-blue-500/30">
+    <div class="max-w-7xl mx-auto px-4 py-8 md:px-8 md:py-12">
+        <!-- Header Section -->
+        <header class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <span class="status-badge bg-blue-500/10 text-blue-400 border border-blue-500/20">Executive Report</span>
+                    <span class="text-slate-500 text-sm">Confidential</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                    阿里巴巴 <span class="gradient-text">金牌供應商</span><br/>
+                    店鋪績效戰略報告
+                </h1>
+                <div class="flex items-center text-slate-400 font-medium">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    2025年12月 — 2026年5月數據週期
+                </div>
+            </div>
+            <div class="flex flex-col items-start md:items-end">
+                <div class="text-xs uppercase tracking-widest text-slate-500 mb-1">Report Generated For</div>
+                <div class="text-xl font-bold text-white">All Glory Management Team</div>
+            </div>
+        </header>
+
+        <!-- KPI Grid: Impactful metrics -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div class="glass-card p-8 rounded-[2.5rem] relative overflow-hidden group">
+                <div class="absolute -right-4 -top-4 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/10 transition-all"></div>
+                <div class="kpi-icon w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-blue-400 shadow-inner">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                </div>
+                <div class="flex items-baseline space-x-2">
+                    <span class="text-5xl font-black tracking-tighter text-white">+72%</span>
+                    <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"></path></svg>
+                </div>
+                <p class="text-slate-400 font-bold mt-2 uppercase text-xs tracking-widest">搜索曝光增長</p>
+            </div>
+
+            <div class="glass-card p-8 rounded-[2.5rem] relative overflow-hidden group">
+                <div class="kpi-icon w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-purple-400 shadow-inner">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                </div>
+                <div class="flex items-baseline space-x-2">
+                    <span class="text-5xl font-black tracking-tighter text-white">+138%</span>
+                </div>
+                <p class="text-slate-400 font-bold mt-2 uppercase text-xs tracking-widest">點擊量增長</p>
+            </div>
+
+            <div class="glass-card p-8 rounded-[2.5rem] relative overflow-hidden group">
+                <div class="kpi-icon w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-emerald-400 shadow-inner">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </div>
+                <div class="flex items-baseline space-x-2">
+                    <span class="text-5xl font-black tracking-tighter text-white">+159%</span>
+                </div>
+                <p class="text-slate-400 font-bold mt-2 uppercase text-xs tracking-widest">商機轉化增長</p>
+            </div>
+
+            <div class="glass-card p-8 rounded-[2.5rem] relative overflow-hidden group">
+                <div class="kpi-icon w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-amber-400 shadow-inner">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <div class="flex items-baseline space-x-2">
+                    <span class="text-5xl font-black tracking-tighter text-white">5.1x</span>
+                </div>
+                <p class="text-slate-400 font-bold mt-2 uppercase text-xs tracking-widest">單品曝光效率 vs 行業</p>
+            </div>
+        </div>
+
+        <!-- Digital Assets Section -->
+        <section class="mb-16">
+            <div class="flex items-center space-x-4 mb-8">
+                <h2 class="text-3xl font-extrabold text-white">數字資產價值與國際信譽</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-blue-500/50 to-transparent"></div>
+            </div>
+            <div class="bg-blue-600/5 rounded-[3rem] p-1 border border-blue-500/10">
+                <div class="glass-card rounded-[2.9rem] p-8 md:p-12">
+                    <p class="text-xl text-slate-300 mb-12 leading-relaxed max-w-3xl">
+                        All Glory 店鋪目前擁有競爭對手需多年經營且投入巨資才能獲得的核心競爭優勢：
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div class="space-y-6 group">
+                            <div class="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-7.618 3.04C5.38 7.551 5.38 12.07 12 18c6.62-5.93 6.62-10.449 5.618-12.016z"></path></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white tracking-tight">SGS Verified 認證供應商</h3>
+                            <p class="text-slate-400 text-lg leading-relaxed">
+                                正式驗證了位於越南平福省 (Binh Phuoc) 面積達 <span class="text-blue-400 font-extrabold">27,152 平方米</span> 的工廠規模。這是歐美大型集團在簽署大宗訂單時的首要前提條件，賦予了店鋪極高的國際誠信背書。
+                            </p>
+                        </div>
+                        <div class="space-y-6 group">
+                            <div class="w-16 h-16 rounded-2xl bg-purple-500/20 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h1.5a2.5 2.5 0 002.5-2.5V10a2 2 0 012-2h1.065M9 9H9.01M12 12H12.01M15 15H15.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white tracking-tight">原產地與趨勢優勢</h3>
+                            <p class="text-slate-400 text-lg leading-relaxed">
+                                在金屬五金 (Metal Hardware) 行業，「<span class="text-purple-400 font-extrabold">越南製造</span>」(Made in Vietnam) 已成為取代中國產品的首選搜索趨勢。All Glory 憑藉本土化優勢，精準捕捉到了全球供應鏈多元化的窗口期。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements & Industry Comparison -->
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-16">
+            <!-- Core Achievements -->
+            <section class="lg:col-span-2 glass-card p-10 rounded-[3rem] border-l-4 border-blue-500">
+                <h2 class="text-2xl font-bold mb-10 text-white flex items-center">
+                    <span class="w-2 h-8 bg-blue-500 rounded-full mr-4"></span> 核心成就
+                </h2>
+                <div class="space-y-8">
+                    <div class="flex items-start">
+                        <div class="mr-4 mt-1 p-1 bg-emerald-500/20 rounded-full text-emerald-400">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <p class="text-slate-300"><strong class="text-white">搜索曝光量增長 72%</strong>：從 41,245 增至 71,035。</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="mr-4 mt-1 p-1 bg-emerald-500/20 rounded-full text-emerald-400">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <p class="text-slate-300"><strong class="text-white">點擊量增長 138%</strong>：證明產品吸引力顯著提升。</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="mr-4 mt-1 p-1 bg-emerald-500/20 rounded-full text-emerald-400">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <p class="text-slate-300"><strong class="text-white">商機轉化量增長 159%</strong>：Inquiry + Message 達 428 件。</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="mr-4 mt-1 p-1 bg-emerald-500/20 rounded-full text-emerald-400">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <p class="text-slate-300"><strong class="text-white">詢盤回覆率 86%+</strong>：展現卓越的服務響應速度。</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="mr-4 mt-1 p-1 bg-emerald-500/20 rounded-full text-emerald-400">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <p class="text-slate-300"><strong class="text-white">高效率佔位</strong>：197 款產品創造行業 17% 曝光規模。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Industry Benchmarking -->
+            <section class="lg:col-span-3 glass-card p-10 rounded-[3rem]">
+                <h2 class="text-2xl font-bold mb-10 text-white flex items-center">
+                    <span class="w-2 h-8 bg-purple-500 rounded-full mr-4"></span> 行業對標分析
+                </h2>
+                <div class="space-y-10">
+                    <!-- Row: Impressions -->
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-end">
+                            <span class="text-lg font-bold text-white">搜索曝光 (Impressions)</span>
+                            <span class="text-blue-400 font-black">71,035 <span class="text-slate-500 text-xs font-normal">/ 410,210 Avg</span></span>
+                        </div>
+                        <div class="benchmark-bar">
+                            <div class="benchmark-fill bg-blue-500" style="width: 17%"></div>
+                        </div>
+                        <p class="text-xs text-emerald-400 font-bold uppercase tracking-wider">僅憑 3.3% 產品數達成 17% 曝光份額</p>
+                    </div>
+
+                    <!-- Row: SKU -->
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-end">
+                            <span class="text-lg font-bold text-white">產品總數 (SKU)</span>
+                            <span class="text-amber-400 font-black">197 <span class="text-slate-500 text-xs font-normal">/ 5,869 Avg</span></span>
+                        </div>
+                        <div class="benchmark-bar">
+                            <div class="benchmark-fill bg-amber-500" style="width: 3.3%"></div>
+                        </div>
+                        <p class="text-xs text-amber-500 font-bold uppercase tracking-wider">明顯不足，建議擴展至 300-500 款</p>
+                    </div>
+
+                    <!-- Row: CTR -->
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-end">
+                            <span class="text-lg font-bold text-white">點擊率 (CTR)</span>
+                            <span class="text-amber-400 font-black">1.53% <span class="text-slate-500 text-xs font-normal">/ 1.90% Avg</span></span>
+                        </div>
+                        <div class="benchmark-bar">
+                            <div class="benchmark-fill bg-amber-500" style="width: 80%"></div>
+                        </div>
+                        <p class="text-xs text-amber-500 font-bold uppercase tracking-wider">需優化首圖視覺與 SEO 關鍵字</p>
+                    </div>
+
+                    <!-- Row: Conversion -->
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-end">
+                            <span class="text-lg font-bold text-white">商機轉化率 (CVR)</span>
+                            <span class="text-blue-400 font-black">8.58% <span class="text-slate-500 text-xs font-normal">/ 21.19% Avg</span></span>
+                        </div>
+                        <div class="benchmark-bar">
+                            <div class="benchmark-fill bg-blue-500" style="width: 40%"></div>
+                        </div>
+                        <p class="text-xs text-blue-400 font-bold uppercase tracking-wider">增長態勢良好，仍有較大提升空間</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Recommendations & Conclusion -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            <section class="lg:col-span-2 glass-card p-10 rounded-[3rem] border-t-8 border-blue-500">
+                <h2 class="text-2xl font-bold mb-8 text-white flex items-center">
+                    <svg class="w-8 h-8 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    戰略優化建議
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-6 bg-white/5 rounded-3xl hover:bg-blue-500/5 transition-colors group">
+                        <span class="text-blue-400 font-black text-xs uppercase mb-2 block tracking-widest">Growth</span>
+                        <h4 class="text-white font-bold mb-2">SKU 擴容</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">產品目錄從 197 增加至 300-500 款，提升搜索捕獲概率。</p>
+                    </div>
+                    <div class="p-6 bg-white/5 rounded-3xl hover:bg-blue-500/5 transition-colors group">
+                        <span class="text-blue-400 font-black text-xs uppercase mb-2 block tracking-widest">Marketing</span>
+                        <h4 class="text-white font-bold mb-2">廣告推廣 (P4P)</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">維持並擴大 P4P 預算，利用現有高效率優勢搶佔市場。</p>
+                    </div>
+                    <div class="p-6 bg-white/5 rounded-3xl hover:bg-blue-500/5 transition-colors group">
+                        <span class="text-blue-400 font-black text-xs uppercase mb-2 block tracking-widest">Efficiency</span>
+                        <h4 class="text-white font-bold mb-2">渠道深耕</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">聚焦 RFQ 市場與櫥窗產品 (Showcase)，精確對接買家需求。</p>
+                    </div>
+                    <div class="p-6 bg-white/5 rounded-3xl hover:bg-blue-500/5 transition-colors group">
+                        <span class="text-blue-400 font-black text-xs uppercase mb-2 block tracking-widest">Visual</span>
+                        <h4 class="text-white font-bold mb-2">視覺對標</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">參考行業標杆，優化產品詳情頁與渲染圖效果。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card p-10 rounded-[3rem] bg-gradient-to-br from-blue-600/20 to-purple-600/20 flex flex-col justify-between border border-blue-500/20">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-white">管理層結論</h3>
+                    <p class="text-lg text-slate-300 italic leading-relaxed relative">
+                        <span class="text-5xl text-blue-500/20 absolute -top-6 -left-4">"</span>
+                        阿里巴巴平台已證實具備為企業創造國際客源的真實能力。目前正處於「流量轉化為訂單」的關鍵增長期。
+                    </p>
+                </div>
+                <div class="mt-10 p-6 bg-white/10 rounded-2xl">
+                    <span class="text-blue-400 font-bold block mb-2 uppercase text-xs">戰略決策建議</span>
+                    <p class="text-white font-bold leading-relaxed">
+                        持續加大投入，切勿在此時縮減預算，以免錯失店鋪增長的黃金周期。
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Competitor Benchmarking -->
+        <section class="glass-card p-12 rounded-[3.5rem] mb-16 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-5">
+                <svg class="w-64 h-64" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"></path></svg>
+            </div>
+            <h2 class="text-3xl font-extrabold mb-12 text-white flex items-center">
+                競爭對手標杆分析 (Benchmark)
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="space-y-8">
+                    <div class="flex justify-between items-center text-xs font-bold uppercase tracking-widest text-slate-500 border-b border-white/5 pb-4">
+                        <span>指標項目</span>
+                        <div class="flex space-x-12">
+                            <span class="w-24 text-center">Jin Jumbo (標杆)</span>
+                            <span class="w-24 text-center">All Glory (本店)</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Benchmark Row -->
+                    <div class="flex justify-between items-center group">
+                        <span class="text-slate-300 font-medium">店鋪星級 (Star)</span>
+                        <div class="flex space-x-12">
+                            <span class="w-24 text-center text-yellow-500 font-bold">⭐⭐⭐⭐</span>
+                            <span class="w-24 text-center text-yellow-500 font-bold">⭐</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center group">
+                        <span class="text-slate-300 font-medium">營銷得分</span>
+                        <div class="flex space-x-12">
+                            <span class="w-24 text-center text-yellow-500 font-bold">⭐⭐⭐⭐⭐</span>
+                            <span class="w-24 text-center text-yellow-500 font-bold">⭐</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center group">
+                        <span class="text-slate-300 font-medium">產品總數</span>
+                        <div class="flex space-x-12">
+                            <span class="w-24 text-center text-white font-bold">861</span>
+                            <span class="w-24 text-center text-red-400 font-bold">161</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center group">
+                        <span class="text-slate-300 font-medium">月均訪客數 (UV)</span>
+                        <div class="flex space-x-12">
+                            <span class="w-24 text-center text-white font-bold">1,676</span>
+                            <span class="w-24 text-center text-red-400 font-bold">265</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center group">
+                        <span class="text-slate-300 font-medium">月均商機買家</span>
+                        <div class="flex space-x-12">
+                            <span class="w-24 text-center text-white font-bold">127</span>
+                            <span class="w-24 text-center text-red-400 font-bold">9</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col justify-center space-y-8">
+                    <div class="p-8 bg-blue-500/10 rounded-[2.5rem] border border-blue-500/20">
+                        <h4 class="text-blue-400 font-bold mb-3 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>
+                            標杆啟示
+                        </h4>
+                        <p class="text-slate-300 leading-relaxed italic">
+                            標杆企業 Jin Jumbo 在產品規模與營銷投入上具有顯著優勢，每月穩定獲取超過 127 名高質量買家 (L2+)，其中包含多位歷史交易額超萬美金的大客戶。
+                        </p>
+                    </div>
+                    <div class="p-8 bg-purple-500/10 rounded-[2.5rem] border border-purple-500/20">
+                        <h4 class="text-purple-400 font-bold mb-3 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"></path></svg>
+                            增長空間
+                        </h4>
+                        <p class="text-slate-300 leading-relaxed">
+                            All Glory 目前僅挖掘了約 <span class="text-white font-black underline decoration-purple-500">19%</span> 的潛力空間。若能對標擴展至 500 SKU 並強化 RFQ 回覆，預計 12 個月內流量與詢盤可實現 5-10 倍的爆發式增長。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visibility Screenshots -->
+        <section class="glass-card p-12 rounded-[3.5rem] mb-16">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-4">
+                <h2 class="text-3xl font-extrabold text-white">全球索引與全網可見度</h2>
+                <div class="px-6 py-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 font-bold text-sm">
+                    Verified Indexing Status: Active
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <div class="rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl group ring-1 ring-white/5">
+                        <img src="https://sc04.alicdn.com/kf/Se67a729748114174b9c9fe3a098e7ba6e.jpg" alt="Alibaba Search" class="w-full h-auto transform group-hover:scale-105 transition-all duration-700">
+                    </div>
+                    <div class="flex items-center space-x-3 px-4">
+                        <div class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+                        <p class="text-sm text-slate-400 font-medium">阿里巴巴平台搜索結果：All Glory 成功位列首頁</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl group ring-1 ring-white/5">
+                        <img src="https://sc04.alicdn.com/kf/S5fdce045216f43b29f1fc10b7e3090dbO.jpg" alt="Google Search" class="w-full h-auto transform group-hover:scale-105 transition-all duration-700">
+                    </div>
+                    <div class="flex items-center space-x-3 px-4">
+                        <div class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+                        <p class="text-sm text-slate-400 font-medium">Google 搜索索引：All Glory 關鍵字精準覆蓋</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 p-8 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-[2.5rem] border border-white/5 relative overflow-hidden">
+                <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-blue-500/5 blur-3xl"></div>
+                <p class="text-slate-200 text-xl leading-relaxed text-center font-medium">
+                    🚀 <span class="gradient-text font-black">核心突破：</span> All Glory 已成功被 <span class="text-white font-extrabold underline decoration-blue-500">阿里巴巴搜索</span> 及 <span class="text-white font-extrabold underline decoration-purple-500">Google</span> 索引，展現卓越的全網品牌曝光能力。這標誌著企業已從單一平台運營轉向全球數位通路的全覆蓋。
+                </p>
+            </div>
+        </section>
+
+        <!-- Investment Plan: Second Year -->
+        <section class="glass-card p-12 rounded-[4rem] mb-20 border-b-8 border-emerald-500 shadow-emerald-500/5">
+            <header class="mb-12">
+                <span class="text-emerald-400 font-black text-xs uppercase tracking-[0.2em] mb-3 block">Next Phase Investment</span>
+                <h2 class="text-4xl font-black text-white">第二年投資與會員方案展望 <span class="text-emerald-400">($9,999)</span></h2>
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Table -->
+                <div class="glass-card rounded-[2.5rem] overflow-hidden border border-white/5">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="bg-white/5">
+                                <th class="p-6 text-slate-400 font-bold uppercase text-xs tracking-widest">項目名稱</th>
+                                <th class="p-6 text-slate-400 font-bold uppercase text-xs tracking-widest">權益內容</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5 text-sm">
+                            <tr class="hover:bg-white/2 transition-colors">
+                                <td class="p-5 pl-8 font-medium text-slate-300">會員等級</td>
+                                <td class="p-5 font-black text-blue-400">金牌供應商 (Verified Supplier)</td>
+                            </tr>
+                            <tr class="hover:bg-white/2 transition-colors">
+                                <td class="p-5 pl-8 font-medium text-slate-300">起始星級</td>
+                                <td class="p-5 font-black text-yellow-500">⭐⭐⭐⭐</td>
+                            </tr>
+                            <tr class="hover:bg-white/2 transition-colors">
+                                <td class="p-5 pl-8 font-medium text-slate-300">RFQ 報價額度</td>
+                                <td class="p-5 font-black text-white">40 條/月</td>
+                            </tr>
+                            <tr class="hover:bg-white/2 transition-colors">
+                                <td class="p-5 pl-8 font-medium text-slate-300">櫥窗位 (Showcase)</td>
+                                <td class="p-5 font-black text-white">40 個</td>
+                            </tr>
+                            <tr class="hover:bg-white/2 transition-colors">
+                                <td class="p-5 pl-8 font-medium text-slate-300">P4P 廣告紅包</td>
+                                <td class="p-5 font-black text-emerald-400">$500</td>
+                            </tr>
+                            <tr class="hover:bg-white/2 transition-colors">
+                                <td class="p-5 pl-8 font-medium text-slate-300">AI 銷售助手</td>
+                                <td class="p-5 font-black text-emerald-400 flex items-center">
+                                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    全自動智能回覆
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-white/2 transition-colors">
+                                <td class="p-5 pl-8 font-medium text-slate-300 border-none">金牌專屬認證</td>
+                                <td class="p-5 font-medium text-slate-300 border-none">SGS 驗廠 + 360° 全景 + 視頻認證</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ROI & Roadmap -->
+                <div class="flex flex-col justify-between space-y-8">
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-white mb-6">ROI 價值提升</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center p-5 bg-white/5 rounded-2xl border border-white/5 hover:border-blue-500/30 transition-all">
+                                <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex-shrink-0 flex items-center justify-center font-bold mr-5">1</div>
+                                <p class="text-sm text-slate-300">AI 買家身份驗證，精確過濾高質量採購商。</p>
+                            </div>
+                            <div class="flex items-center p-5 bg-white/5 rounded-2xl border border-white/5 hover:border-blue-500/30 transition-all">
+                                <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex-shrink-0 flex items-center justify-center font-bold mr-5">2</div>
+                                <p class="text-sm text-slate-300">重新激活並深度挖掘逾 1,200 名潛在歷史客戶。</p>
+                            </div>
+                            <div class="flex items-center p-5 bg-white/5 rounded-2xl border border-white/5 hover:border-blue-500/30 transition-all">
+                                <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex-shrink-0 flex items-center justify-center font-bold mr-5">3</div>
+                                <p class="text-sm text-slate-300">第二年投資成本降低約 9.1%，工具權益反而大幅增加。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-6 bg-slate-800/50 rounded-3xl border border-white/5">
+                            <h4 class="text-slate-400 font-bold text-xs uppercase mb-3">第一年：打基礎</h4>
+                            <ul class="text-[11px] text-slate-500 space-y-1">
+                                <li>• 激活帳號與工廠實地驗證</li>
+                                <li>• 搭建官網形象與產品目錄</li>
+                                <li>• 初始曝光與客戶數據積累</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 bg-emerald-500/10 rounded-3xl border border-emerald-500/20">
+                            <h4 class="text-emerald-400 font-bold text-xs uppercase mb-3">第二年：爆發變現</h4>
+                            <ul class="text-[11px] text-emerald-400/70 space-y-1">
+                                <li>• 擴大 SKU 獲取更高權重</li>
+                                <li>• 利用 AI 提升詢盤轉化效率</li>
+                                <li>• 實現流量到出口額規模化</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-20 pt-10 border-t border-white/5 text-center">
+            <p class="text-slate-500 font-medium mb-2 uppercase tracking-widest text-[10px]">© 2026 Alibaba Performance Dashboard | Official Strategic Report</p>
+            <div class="flex items-center justify-center space-x-6 text-slate-600 text-xs">
+                <span>Verified Data Source</span>
+                <span class="w-1 h-1 bg-slate-700 rounded-full"></span>
+                <span>Exclusive Management Insight</span>
+                <span class="w-1 h-1 bg-slate-700 rounded-full"></span>
+                <span>Export Specialist Review</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script to simulate data fill animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Performance report initialized.');
+        });
+    </script>
+</body>
+</html>
