@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Báo cáo Thị trường Nông sản và Đu đủ Việt Nam trên Alibaba.com 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+    :root {
+      --p: #002B5B; --s: #1F75FE; --g: #D4A017; --bg: #F8F9FA; --text: #2C3E50;
+      --sidebar-bg: #07162C; --card-bg: #FFFFFF; --sw: 260px; --border-radius: 12px; --transition: all 0.3s ease;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; max-width: 100vw; scroll-behavior: smooth; }
+    body { font-family: 'Lexend', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+    img { max-width: 100%; height: auto; }
+    canvas { max-width: 100% !important; display: block; margin: 0 auto; height: 350px !important; }
+    .sidebar { position: fixed; top: 0; left: 0; width: var(--sw); height: 100vh; background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--p) 100%); color: #fff; padding: 2rem 1.5rem; overflow-y: auto; z-index: 100; box-shadow: 4px 0 15px rgba(0,0,0,0.1); }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: 1.25rem; font-weight: 700; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .brand i { color: var(--g); }
+    .sidebar nav ul { list-style: none; }
+    .sidebar nav ul li { margin-bottom: 0.5rem; }
+    .sidebar nav ul li a { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.8); text-decoration: none; padding: 0.75rem 1rem; border-radius: var(--border-radius); font-size: 0.95rem; font-weight: 600; transition: var(--transition); }
+    .sidebar nav ul li a:hover, .sidebar nav ul li a.active { color: #fff; background-color: rgba(255,255,255,0.06); border-left: 4px solid var(--g); }
+    .main-content { margin-left: var(--sw); width: calc(100% - var(--sw)); padding: 2.5rem 3rem; max-width: 1400px; position: relative; }
+    .header-banner { background: linear-gradient(135deg, rgba(7, 22, 44, 0.9) 0%, rgba(0, 43, 91, 0.75) 100%), url('https://images.unsplash.com/photo-1528825831135-33b1b7a70a41?auto=format&fit=crop&q=80&w=1600') no-repeat center center; background-size: cover; padding: 4rem 2.5rem; border-radius: var(--border-radius); position: relative; margin-bottom: 2rem; box-shadow: 0 8px 25px rgba(0,43,91,0.15); min-height: 280px; display: flex; flex-direction: column; justify-content: center; }
+    .badge { display: inline-block; background-color: var(--g); color: #07162C; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 50px; margin-bottom: 1rem; width: fit-content; }
+    .title { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.5rem; line-height: 1.3; color: #fff; }
+    .meta { display: flex; flex-wrap: wrap; gap: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.9); border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1rem; margin-top: 1.5rem; }
+    .section-card { background-color: var(--card-bg); border-radius: var(--border-radius); padding: 2.5rem; margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.02); width: 100%; }
+    .section-title { font-size: 1.4rem; font-weight: 700; color: var(--p); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--bg); padding-bottom: 0.75rem; }
+    .section-title i { color: var(--g); }
+    .sub-title { font-size: 1.15rem; font-weight: 700; color: var(--p); margin: 2rem 0 1rem 0; border-left: 4px solid var(--g); padding-left: 10px; }
+    p { margin-bottom: 1rem; color: #576574; }
+    .highlight { background-color: #F0F4F8; border-left: 4px solid var(--s); padding: 1rem 1.25rem; border-radius: 0 var(--border-radius) var(--border-radius) 0; margin-bottom: 1.25rem; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; width: 100%; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; width: 100%; }
+    .info-card { background-color: var(--bg); border-radius: var(--border-radius); padding: 1.5rem; border: 1px solid rgba(0,0,0,0.04); transition: var(--transition); }
+    .info-val { font-size: 1.6rem; font-weight: 800; color: var(--p); }
+    .info-lbl { font-size: 0.85rem; font-weight: 600; color: var(--s); margin-top: 0.35rem; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.85rem; }
+    table th { background-color: var(--p); color: #fff; font-weight: 600; text-align: left; padding: 0.8rem 1rem; border: 1px solid rgba(0,0,0,0.05); }
+    table td { padding: 0.8rem 1rem; border: 1px solid rgba(0,0,0,0.05); vertical-align: middle; }
+    table tr:nth-child(even) { background-color: #F8FAFC; }
+    .table-container { overflow-x: auto; margin-top: 1rem; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); width: 100%; }
+    .link-store-btn { display: inline-flex; align-items: center; justify-content: center; background-color: #8B4513; color: white !important; padding: 0.5rem 0.8rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.75rem; white-space: nowrap; }
+    .market-chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0 2rem; align-items: stretch; }
+    .chart-box { background: linear-gradient(180deg, #FFFFFF 0%, #FBFCFF 100%); border: 1px solid rgba(0,43,91,0.08); border-radius: 18px; padding: 1.5rem 1.5rem 1.1rem; width: 100%; min-height: 430px; position: relative; box-shadow: 0 12px 30px rgba(0,43,91,0.06); overflow: hidden; }
+    .chart-box::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--g), var(--s)); }
+    .chart-box.wide { min-height: 420px; margin-top: 1.2rem; }
+    .chart-insight { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.2rem; }
+    .insight-pill { background: #F4F7FB; border: 1px solid rgba(0,43,91,0.06); border-radius: 12px; padding: 0.9rem 1rem; }
+    .insight-pill strong { display: block; font-size: 1.35rem; color: var(--p); line-height: 1.1; }
+    .insight-pill span { font-size: 0.78rem; color: #6B7280; font-weight: 600; }
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.2rem 0 1.5rem; }
+    .potential-box { background: #FFF8E5; border: 1px solid rgba(212,160,23,0.25); border-left: 5px solid var(--g); border-radius: 14px; padding: 1.2rem 1.4rem; }
+    .potential-box h4 { color: var(--p); margin-bottom: 0.55rem; font-size: 1rem; }
+    .potential-box p { margin-bottom: 0; font-size: 0.9rem; }
+    .rfq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
+    .rfq-card { background-color: var(--card-bg); border-radius: var(--border-radius); padding: 1.5rem; border: 1px solid rgba(0,0,0,0.06); border-top: 4px solid var(--g); box-shadow: 0 4px 12px rgba(0,0,0,0.04); transition: all 0.3s ease; display: flex; flex-direction: column; gap: 0.8rem; }
+    .rfq-title { font-size: 1.05rem; font-weight: 700; color: var(--p); line-height: 1.4; }
+    .rfq-desc { font-size: 0.88rem; color: #576574; line-height: 1.6; word-wrap: break-word; text-align: justify; }
+    .rfq-img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0,0,0,0.06); }
+    .persona-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
+    .persona-card { background-color: #F8F9FA; padding: 1.8rem; border-radius: 12px; border-top: 4px solid var(--s); box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+    .persona-card h4 { color: var(--p); margin-bottom: 1rem; font-size: 1.1rem; }
+    .persona-card ul { list-style: none; padding-left: 0; font-size: 0.85rem; color: #576574; }
+    .persona-card li { margin-bottom: 0.6rem; display: flex; align-items: flex-start; gap: 8px; }
+    .persona-card li::before { content: '\2714'; color: var(--s); font-weight: bold; }
+    .strategy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 1.5rem 0 1.75rem; }
+    .strategy-card { background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%); border: 1px solid rgba(0,43,91,0.08); border-radius: 14px; padding: 1.25rem; box-shadow: 0 6px 18px rgba(0,0,0,0.035); }
+    .strategy-no { display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:50%; background: rgba(31,117,254,0.10); color: var(--s); font-weight:800; font-size:0.82rem; margin-bottom:0.75rem; }
+    .strategy-card h4 { color: var(--p); font-size: 1rem; margin-bottom: 0.55rem; }
+    .strategy-card p { font-size: 0.86rem; margin-bottom: 0; color: #576574; }
+    .research-notes { margin-top: 2rem; padding: 1.6rem; background: #F0F4F8; border-left: 4px solid var(--p); border-radius: 12px; }
+    .research-notes h3 { color: var(--p); font-size: 1.08rem; margin-bottom: 1rem; display:flex; align-items:center; gap:8px; }
+    .source-table a { color: var(--s); font-weight: 700; text-decoration: none; }
+    footer { background: linear-gradient(135deg, #07162C 0%, #002B5B 100%); color: #fff; padding: 2.2rem; border-radius: 18px 18px 0 0; margin-top: 4rem; box-shadow: 0 -8px 24px rgba(0,0,0,0.08); }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; align-items: stretch; }
+    .footer-logo { display:flex; align-items:center; gap:10px; font-size:1.25rem; font-weight:800; margin-bottom:0.8rem; }
+    .footer-logo i { color: var(--g); }
+    .footer-brand-block p { color: rgba(255,255,255,0.72); max-width: 540px; margin-bottom:0; }
+    .footer-contact-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 1.3rem; }
+    .footer-contact-card h3 { font-size: 1rem; margin-bottom:0.35rem; color:#fff; }
+    .fc-name { font-size:1.25rem; font-weight:800; color:#fff; margin-bottom:0.9rem; }
+    .footer-action { display:flex; align-items:center; gap:10px; color:#fff !important; text-decoration:none; padding:0.72rem 0; border-top:1px solid rgba(255,255,255,0.10); word-break: break-word; }
+    .footer-action i { color: var(--g); width: 18px; }
+    .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.5); padding-top: 1rem; }
+    @media (max-width: 1100px) { .main-content { padding: 2rem; } .grid-2, .grid-3, .market-chart-grid, .pricing-grid { grid-template-columns: 1fr; } .chart-box { min-height: 390px; } }
+    @media (max-width: 720px) { .main-content { margin-left: 0; width: 100%; padding: 1rem; } .sidebar { position: relative; width: 100%; height: auto; display: flex; flex-direction: column; padding: 12px; } .sidebar nav ul { display: flex; flex-direction: row; gap: 8px; overflow: auto; } }
+  </style>
+</head>
+<body>
+<div class="sidebar">
+<div class="brand"><i class="fa-solid fa-leaf"></i> <span>Alibaba B2B Expert</span></div>
+<nav>
+<ul>
+<li><a class="active" href="#sec1"><i class="fa-solid fa-flag"></i> Chương 1: Tóm tắt</a></li>
+<li><a href="#sec2"><i class="fa-solid fa-globe"></i> Chương 2: Thị trường</a></li>
+<li><a href="#sec3"><i class="fa-solid fa-warehouse"></i> Chương 3: Nhà cung cấp</a></li>
+<li><a href="#sec4"><i class="fa-solid fa-award"></i> Chương 4: Sản phẩm</a></li>
+<li><a href="#sec5"><i class="fa-solid fa-clipboard-list"></i> Chương 5: RFQ</a></li>
+<li><a href="#sec6"><i class="fa-solid fa-magnifying-glass"></i> Chương 6: Người mua</a></li>
+<li><a href="#sec7"><i class="fa-solid fa-tags"></i> Chương 7: Giá bán</a></li>
+<li><a href="#sec8"><i class="fa-solid fa-rocket"></i> Chương 8: Chiến lược</a></li>
+</ul>
+</nav>
+</div>
+<div class="main-content">
+<div class="header-banner">
+<span class="badge">BÁO CÁO NGÀNH 2026</span>
+<h1 class="title">Báo cáo Thị trường Nông sản và Đu đủ Việt Nam trên Alibaba.com</h1>
+<p style="color: rgba(255,255,255,0.95); font-size: 1.1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Phân tích tiềm năng xuất khẩu và chiến lược cạnh tranh B2B toàn cầu</p>
+<div class="meta">
+<span><i class="fa-solid fa-user-tie"></i> Người thực hiện: <strong>Frank</strong></span>
+<span><i class="fa-solid fa-calendar-days"></i> Ngày lập: <strong>06/07/2026</strong></span>
+</div>
+</div>
+
+<div class="section-card" id="sec1">
+<h2 class="section-title"><i class="fa-solid fa-flag"></i> Chương 1: Tóm tắt điều hành</h2>
+<div class="grid-3">
+<div class="info-card"><div class="info-val">15.72 tỷ $</div><div class="info-lbl">Kim ngạch xuất khẩu Q1/2025</div></div>
+<div class="info-card"><div class="info-val">+13.1%</div><div class="info-lbl">Tốc độ tăng trưởng năm</div></div>
+<div class="info-card"><div class="info-val">16.27 tỷ $</div><div class="info-lbl">Quy mô thị trường Đu đủ 2025</div></div>
+</div>
+<div class="highlight">Việt Nam đang khẳng định vị thế là trung tâm nông sản mới của Đông Nam Á với sự bứt phá mạnh mẽ trong xuất khẩu trái cây nhiệt đới, đặc biệt là đu đủ nhờ các hiệp định thương mại thế hệ mới. <a href="https://customs.gov.vn" target="_blank" class="citation">[Nguồn: Hải quan]</a></div>
+<p>Ngành nông sản Việt Nam bước vào năm 2026 với đà tăng trưởng ấn tượng. Riêng mặt hàng đu đủ, nhờ ứng dụng công nghệ sấy dẻo (AD) và đông lạnh IQF, sản phẩm đã tiếp cận sâu vào các thị trường khó tính như Hoa Kỳ, Canada và EU. Các nhà cung cấp Việt Nam trên Alibaba.com hiện chiếm ưu thế về giá và chất lượng ổn định so với khu vực. <a href="https://www.tridge.com/market-overview/fresh-papaya" target="_blank" class="citation">[Nguồn: Tridge]</a></p>
+</div>
+
+<div class="section-card" id="sec2">
+<h2 class="section-title"><i class="fa-solid fa-globe"></i> Chương 2: Tổng quan thị trường toàn cầu</h2>
+<div class="chart-insight">
+<div class="insight-pill"><strong>62.4%</strong><span>Thị phần đu đủ tươi toàn cầu</span></div>
+<div class="insight-pill"><strong>59.3%</strong><span>Thị phần khu vực Châu Á - TBD</span></div>
+<div class="insight-pill"><strong>4.88%</strong><span>Tốc độ tăng trưởng CAGR</span></div>
+</div>
+<div class="market-chart-grid">
+<div class="chart-box"><canvas id="shareChart"></canvas></div>
+<div class="chart-box"><canvas id="growthChart"></canvas></div>
+</div>
+<h3 class="sub-title">Quốc gia xuất khẩu hàng đầu (Sellers)</h3>
+<div class="table-container">
+<table>
+<thead><tr><th>#</th><th>Quốc gia</th><th>Thị phần/Sản lượng</th><th>Phân tích chuyên sâu</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Mexico</td><td>Hơn 200,000 tấn</td><td>Dẫn đầu thị trường xuất khẩu, tập trung chính vào Hoa Kỳ.</td></tr>
+<tr><td>2</td><td>Brazil</td><td>~44,000 tấn</td><td>Thế mạnh về đu đủ Solo chất lượng cao xuất khẩu sang EU.</td></tr>
+<tr><td>3</td><td>Ấn Độ</td><td>Sản lượng lớn nhất</td><td>Chủ yếu tiêu thụ nội địa, bắt đầu đẩy mạnh xuất khẩu tươi.</td></tr>
+<tr><td>4</td><td>Việt Nam</td><td>Đang tăng trưởng</td><td>Thế mạnh về các sản phẩm chế biến sâu (sấy, đông lạnh).</td></tr>
+<tr><td>5</td><td>Belize</td><td>Thị phần ngách</td><td>Cung cấp ổn định cho thị trường Bắc Mỹ.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="chart-box wide"><canvas id="exportCountriesChart"></canvas></div>
+<h3 class="sub-title">Quốc gia nhập khẩu hàng đầu (Buyers)</h3>
+<div class="table-container">
+<table>
+<thead><tr><th>#</th><th>Thị trường</th><th>Tỷ lệ nhập khẩu</th><th>Xu hướng cầu</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Hoa Kỳ</td><td>43.19%</td><td>Nhu cầu khổng lồ cho cả tươi và chế biến.</td></tr>
+<tr><td>2</td><td>Singapore</td><td>8.34%</td><td>Cửa ngõ quan trọng tại Đông Nam Á cho đu đủ Việt Nam.</td></tr>
+<tr><td>3</td><td>Canada</td><td>5.30%</td><td>Ưa chuộng sản phẩm organic và sấy khô.</td></tr>
+<tr><td>4</td><td>Hà Lan</td><td>4.18%</td><td>Trung tâm tái xuất khẩu lớn nhất tại Châu Âu.</td></tr>
+<tr><td>5</td><td>Bồ Đào Nha</td><td>8.85% (Khu vực EU)</td><td>Thị trường tăng trưởng nhanh cho đu đủ tươi.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="chart-box wide"><canvas id="importCountriesChart"></canvas></div>
+<p>Dữ liệu thị trường cho thấy sự dịch chuyển từ trái cây tươi sang các sản phẩm chế biến sẵn để tối ưu hóa chi phí vận chuyển và bảo quản. <a href="https://www.marketresearchfuture.com/reports/papaya-market-22634" target="_blank" class="citation">[Nguồn: MarketResearch]</a></p>
+</div>
+
+<div class="section-card" id="sec3">
+<h2 class="section-title"><i class="fa-solid fa-warehouse"></i> Chương 3: Bức tranh nhà cung cấp</h2>
+<div class="table-container">
+<table>
+<thead>
+<tr><th style="width: 40px;">STT</th><th>Tên công ty</th><th>Sản phẩm chính</th><th>Doanh thu hàng năm</th><th>Số năm trên Alibaba</th><th style="width: 90px;">Store</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>VIET SEAFARM CO., LTD</td><td>Trái cây tươi, đu đủ, gia vị</td><td>2.5 - 5 triệu USD</td><td>10 năm</td><td><a class="link-store-btn" href="https://vietseafarm.trustpass.alibaba.com" target="_blank">Xem Store</a></td></tr>
+<tr><td>2</td><td>VIET D.E.L.T.A INDUSTRIAL CO.</td><td>Nông sản chế biến, đu đủ đông lạnh</td><td>5 - 10 triệu USD</td><td>14 năm</td><td><a class="link-store-btn" href="https://vdelta.trustpass.alibaba.com" target="_blank">Xem Store</a></td></tr>
+<tr><td>3</td><td>99 GOLD DATA</td><td>Đu đủ sấy dẻo, trái cây sấy AD</td><td>1 - 2.5 triệu USD</td><td>8 năm</td><td><a class="link-store-btn" href="https://99golddata.trustpass.alibaba.com" target="_blank">Xem Store</a></td></tr>
+<tr><td>4</td><td>KIM MINH INTERNATIONAL</td><td>Đu đủ tươi ruột đỏ, puree</td><td>2.5 - 5 triệu USD</td><td>10 năm</td><td><a class="link-store-btn" href="https://vn1008273416.trustpass.alibaba.com" target="_blank">Xem Store</a></td></tr>
+<tr><td>5</td><td>BLUE LOTUS FARM CO., LTD</td><td>Đu đủ sấy dẻo không đường</td><td>1 - 2.5 triệu USD</td><td>1 năm</td><td><a class="link-store-btn" href="https://bluelotusecofarm.trustpass.alibaba.com" target="_blank">Xem Store</a></td></tr>
+<tr><td>6</td><td>VIETCOCO INTERNATIONAL</td><td>Nông sản đóng lon, hoa quả sấy</td><td>1 - 2.5 triệu USD</td><td>13 năm</td><td><a class="link-store-btn" href="https://vietcoco.trustpass.alibaba.com" target="_blank">Xem Store</a></td></tr>
+<tr><td>7</td><td>AN VAN THINH FOOD</td><td>Đu đủ đông lạnh IQF số lượng lớn</td><td>2.5 - 5 triệu USD</td><td>14 năm</td><td><a class="link-store-btn" href="https://avtfood.en.alibaba.com" target="_blank">Xem Store</a></td></tr>
+<tr><td>8</td><td>GIA GIA NGUYEN CO., LTD</td><td>Trái cây khô, hạt điều, dừa</td><td>5 - 10 triệu USD</td><td>14 năm</td><td><a class="link-store-btn" href="https://giagianguyen.trustpass.alibaba.com" target="_blank">Xem Store</a></td></tr>
+<tr><td>9</td><td>TAKIMEX GLOBAL CO., LTD</td><td>Đu đủ sấy lạnh (FD), cao cấp</td><td>1 - 2.5 triệu USD</td><td>3 năm</td><td><a class="link-store-btn" href="https://takimex.trustpass.alibaba.com" target="_blank">Xem Store</a></td></tr>
+<tr><td>10</td><td>ABC FARM VIET CO., LTD</td><td>Đu đủ hữu cơ, canh tác sạch</td><td>1 - 2.5 triệu USD</td><td>13 năm</td><td><a class="link-store-btn" href="https://abcfarm.trustpass.alibaba.com" target="_blank">Xem Store</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="section-card" id="sec4">
+<h2 class="section-title"><i class="fa-solid fa-award"></i> Chương 4: Sản phẩm bán chạy</h2>
+<div class="table-container">
+<table>
+<thead>
+<tr><th style="width: 40px;">#</th><th style="width: 65px;">Ảnh Sản Phẩm</th><th>Tên Sản Phẩm</th><th>Dải Giá FOB</th><th>MOQ</th><th style="width: 90px;">Chi tiết</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td><img src="https://s.alicdn.com/@sc04/kf/A8308bcfcfac3463d84e78f12b32cd22eo.jpg_640x640.jpg"/></td><td>Fresh Red Papaya - Vietnam Origin</td><td>$0.45 - $0.85/kg</td><td>1000 kg</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/Delicious-Vietnamese-Fresh-Papaya-Red-and_10000035917450.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>2</td><td><img src="https://s.alicdn.com/@sc04/kf/S792f67458b304f7891b1c35742ceb0f0f.jpg_640x640.jpg"/></td><td>Soft Dried Papaya Slices (AD)</td><td>$4.50 - $5.70/kg</td><td>1000 kg</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/Vietnam-Origin-Air-Dried-Soft-Papaya_10000043901743.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>3</td><td><img src="https://s.alicdn.com/@sc04/kf/U5177c3291f9e43e59fe9ab57b7966cc03.jpg_640x640.jpg"/></td><td>Frozen Red Papaya Dices IQF</td><td>$0.65 - $0.95/kg</td><td>1000 kg</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/High-Quality-LQF-Frozen-Red-Papaya_10000007092711.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>4</td><td><img src="https://s.alicdn.com/@sc04/kf/S6bccb49e0c4b404690e3e34e5a6b17adt.jpg_640x640.jpg"/></td><td>Dried Soft Papaya Ready to Eat</td><td>$3.30 - $4.00/kg</td><td>10 kg</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/-AVAILABLE-Dried-Soft-Papaya-Ready_10000043678821.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>5</td><td><img src="https://s.alicdn.com/@sc04/kf/He078ce7adef54d198ceb536b0c2276ceq.png_640x640.png"/></td><td>Grade A Solo Papaya Fresh</td><td>$400 - $450/ton</td><td>1 ton</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/Natural-Sweetness-Fresh-DIG-Brand-Grade_1601661755183.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>6</td><td><img src="https://s.alicdn.com/@sc04/kf/A1153877b2bbe42c5ab436ac2bbfcc28a4.jpg_640x640.jpg"/></td><td>Papaya Cream Export Quality</td><td>$0.75 - $1.00/kg</td><td>500 kg</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/Papaya-Cream-Export-From-Vietnam-with_11000008407816.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>7</td><td><img src="https://s.alicdn.com/@sc04/kf/A89858bee485d4e9c987754cfc3554ea02.jpg_640x640.jpg"/></td><td>Organic Fresh Papaya High Quality</td><td>$2.00 - $3.00/kg</td><td>1000 kg</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/Vietnam-Grown-Organic-Fresh-Papaya-High_10000027072436.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>8</td><td><img src="https://s.alicdn.com/@sc04/kf/Af31cd95976bf4efcbd9e70fcc99a92436.jpg_640x640.jpg"/></td><td>Frozen Organic Papaya Dices</td><td>$1.60 - $1.80/kg</td><td>13 tấn</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/Best-Price-High-Quality-Organic-Frozen_10000012795373.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>9</td><td><img src="https://s.alicdn.com/@sc04/kf/Sf7fc27db794b496484cdb9708f3c8f66P.jpg_640x640.jpg"/></td><td>Dried Soft Papaya Fruit Slices</td><td>$4.20 - $5.00/kg</td><td>10 kg</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/-HOT-SELLING-Dried-Soft-Papaya_10000043678812.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>10</td><td><img src="https://s.alicdn.com/@sc04/kf/H21f3221872014805bf04e76dbbce482ev.png_640x640.png"/></td><td>Bulk Dried Papaya Soft Texture</td><td>$3.00 - $6.00/kg</td><td>100 kg</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/Bulk-Dried-Papaya-with-Soft-Chewy_10000044285106.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>11</td><td><img src="https://s.alicdn.com/@sc04/kf/Aa367305c638b47a3adcf17d7b765ca1eM.jpg_640x640.jpg"/></td><td>Yellow Oval Papaya Fruit Fresh</td><td>$0.60/kg</td><td>1000 kg</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/High-Quality-High-Sweetness-Fresh-Papaya_10000014205933.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>12</td><td><img src="https://s.alicdn.com/@sc04/kf/Hbcee1c0f4804487d9386af93ceb273feP.jpg_640x640.jpg"/></td><td>Cheap Price Dried Papaya fruit</td><td>$2.10/kg</td><td>10 kg</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/Cheap-Price-Dried-Papaya-fruit-From_10000027079388.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>13</td><td><img src="https://s.alicdn.com/@sc04/kf/A426e94e25b5f45708800eba4bb84e1af4.png_640x640.png"/></td><td>Premium Dried Papaya Manufacturer</td><td>$0.70/gói</td><td>1 gói</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/WHOLESALE-PRICE-Premium-Quality-Vietnam-Manufacturer_10000032631499.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>14</td><td><img src="https://s.alicdn.com/@sc04/kf/Abc443f0656014512942f63dd1303b0ce9.jpg_640x640.jpg"/></td><td>Vietnamese Dried Papaya FD</td><td>$4.00 - $8.00/kg</td><td>500 kg</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/Ready-to-Export-Vietnamese-Dried-Papaya_10000020697500.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>15</td><td><img src="https://s.alicdn.com/@sc04/kf/Se35a39363dd24927883f97f5c0aa4017h.jpg_640x640.jpg"/></td><td>Crispy Sweet Bulk Dried Papaya</td><td>$7.85 - $7.90/kg</td><td>1000 kg</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/Crispy-Sweet-Bulk-Dried-Papaya-From_10000016949766.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>16</td><td><img src="https://s.alicdn.com/@sc04/kf/S1c3ab7d86b094dd399793f87725324c58.jpg_640x640.jpg"/></td><td>AD Sliced Sweet Papaya Slice</td><td>$2.50/kg</td><td>1000 kg</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/New-Vegetable-Products-AD-Sliced-Sweet_10000043603645.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>17</td><td><img src="https://s.alicdn.com/@sc04/kf/S910e488498ef4ad0a514f5818a61409ch.png_640x640.png"/></td><td>Soft Dried Papaya Passion Fruit</td><td>$8.00 - $17.00/kg</td><td>2 kg</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/Soft-Dried-Papaya-With-Passion-Fruit_10000032200824.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>18</td><td><img src="https://s.alicdn.com/@sc04/kf/Ab90b7f3e28be40de9aaa07593562a15fN.png_640x640.png"/></td><td>Natural Color Dried Papaya VN</td><td>$0.70/gói</td><td>1 gói</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/WHOLESALE-PRICE-Manufacturer-in-Vietnam-Natural_11000018834132.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>19</td><td><img src="https://s.alicdn.com/@sc04/kf/A101f302dc45a4629b22732623e806bdb9.jpg_640x640.jpg"/></td><td>Frozen Papaya Tropical Fruit Cube</td><td>$1.50 - $2.00/kg</td><td>10 tấn</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/Cheapest-Price-FROZEN-PAPAYA-TROPICAL-FRUIT_10000018268189.html" target="_blank">Xem Chi Tiết</a></td></tr>
+<tr><td>20</td><td><img src="https://s.alicdn.com/@sc04/kf/Hbf49433de6574caa85d15d035c7591d6X.jpg_640x640.jpg"/></td><td>Frozen Papaya Fruit Pulp</td><td>$0.70 - $2.00/kg</td><td>1000 kg</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/Frozen-Papaya-Fruit-Exports-Buyers-Price_11000001426219.html" target="_blank">Xem Chi Tiết</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="section-card" id="sec5">
+<h2 class="section-title"><i class="fa-solid fa-clipboard-list"></i> Chương 5: Yêu cầu báo giá RFQ</h2>
+<div class="rfq-grid">
+<div class="rfq-card">
+<img class="rfq-img" src="https://s.alicdn.com/@sc04/kf/A8308bcfcfac3463d84e78f12b32cd22eo.jpg_640x640.jpg" alt="RFQ"/>
+<div class="rfq-title">Cần mua Đu đủ tươi ruột đỏ xuất khẩu</div>
+<p class="rfq-desc">Khách hàng từ Singapore tìm kiếm đu đủ tươi ruột đỏ, đạt chuẩn GlobalGAP, yêu cầu vận chuyển đường biển container lạnh, 5 tấn/đợt hàng tuần. <a href="https://www.alibaba.com/trade/search?SearchText=papaya+rfq" target="_blank" class="citation">[Source]</a></p>
+</div>
+<div class="rfq-card">
+<img class="rfq-img" src="https://s.alicdn.com/@sc04/kf/S792f67458b304f7891b1c35742ceb0f0f.jpg" alt="RFQ"/>
+<div class="rfq-title">Đu đủ sấy dẻo không đường cho snack cao cấp</div>
+<p class="rfq-desc">Thương hiệu snack tại Hà Lan tìm nguồn cung đu đủ sấy dẻo tự nhiên, không chất bảo quản, đóng gói túi 500g, sản lượng 1 tấn/tháng. <a href="https://www.alibaba.com/trade/search?SearchText=dried+papaya+rfq" target="_blank" class="citation">[Source]</a></p>
+</div>
+<div class="rfq-card">
+<img class="rfq-img" src="https://s.alicdn.com/@sc04/kf/U5177c3291f9e43e59fe9ab57b7966cc03.jpg" alt="RFQ"/>
+<div class="rfq-title">Đu đủ đông lạnh IQF khối 10x10mm</div>
+<p class="rfq-desc">Nhà máy thực phẩm tại Hàn Quốc cần đu đủ đông lạnh IQF cắt khối, dùng cho sản xuất nước giải khát, yêu cầu 2 container/tháng. <a href="https://www.alibaba.com/trade/search?SearchText=frozen+papaya+rfq" target="_blank" class="citation">[Source]</a></p>
+</div>
+<div class="rfq-card">
+<img class="rfq-img" src="https://s.alicdn.com/@sc04/kf/A1153877b2bbe42c5ab436ac2bbfcc28a4.jpg" alt="RFQ"/>
+<div class="rfq-title">Puree đu đủ hữu cơ cho thực phẩm trẻ em</div>
+<p class="rfq-desc">Buyer từ Pháp yêu cầu puree đu đủ đạt chuẩn hữu cơ EU, đóng phuy 200kg, cung cấp lâu dài cho dây chuyền sản xuất đồ ăn dặm.</p>
+</div>
+<div class="rfq-card">
+<img class="rfq-img" src="https://s.alicdn.com/@sc04/kf/A94f80f10d1c24453ab2d727dac29fffbX.jpg" alt="RFQ"/>
+<div class="rfq-title">Đu đủ xanh thái sợi cho nhà hàng</div>
+<p class="rfq-desc">Khách hàng tại Thái Lan/Singapore cần đu đủ xanh độ giòn cao, đã gọt vỏ hoặc thái sợi, đóng gói chân không cho hệ thống nhà hàng.</p>
+</div>
+</div>
+</div>
+
+<div class="section-card" id="sec6">
+<h2 class="section-title"><i class="fa-solid fa-magnifying-glass"></i> Chương 6: Chân dung người mua & Phân tích hình ảnh</h2>
+<h3 class="sub-title">Chân dung người mua tiêu biểu</h3>
+<div class="persona-grid">
+<div class="persona-card"><h4>Nhà phân phối sỉ toàn cầu</h4><ul><li>Nhập khẩu khối lượng lớn container</li><li>Ưu tiên giá cạnh tranh và chứng chỉ</li><li>Kênh phân phối: Chợ đầu mối, siêu thị</li></ul></div>
+<div class="persona-card"><h4>Thương hiệu Snack Healthy</h4><ul><li>Yêu cầu sấy dẻo không đường</li><li>Đóng gói retail cao cấp, bắt mắt</li><li>Sẵn sàng trả giá cao cho chất lượng</li></ul></div>
+<div class="persona-card"><h4>Nhà máy chế biến thực phẩm</h4><ul><li>Cần hàng đông lạnh hoặc puree</li><li>Yêu cầu sự ổn định về nguồn cung</li><li>Kiểm soát khắt khe về VSATTP</li></ul></div>
+</div>
+<h3 class="sub-title">Phân tích hình ảnh sản phẩm thực tế</h3>
+<div class="grid-2">
+<div class="info-card"><img src="https://s.alicdn.com/@sc04/kf/A8308bcfcfac3463d84e78f12b32cd22eo.jpg_640x640.jpg" style="width:100%;height:220px;object-fit:cover;border-radius:8px;margin-bottom:0.75rem;"/><p style="font-size:0.85rem;">Phân tích: Hình ảnh sản phẩm đu đủ tươi cần thể hiện rõ độ chín đều, vỏ không tì vết. Ánh sáng studio giúp sản phẩm trông bắt mắt và chuyên nghiệp hơn. <a href="https://www.alibaba.com/product-detail/Delicious-Vietnamese-Fresh-Papaya-Red-and_10000035917450.html" target="_blank" class="citation">[Source]</a></p></div>
+<div class="info-card"><img src="https://s.alicdn.com/@sc04/kf/S792f67458b304f7891b1c35742ceb0f0f.jpg_640x640.jpg" style="width:100%;height:220px;object-fit:cover;border-radius:8px;margin-bottom:0.75rem;"/><p style="font-size:0.85rem;">Phân tích: Đối với hàng sấy, việc chụp cận cảnh thớ thịt giúp buyer cảm nhận được độ dẻo và màu sắc tự nhiên, là yếu tố quyết định hành vi mua sỉ. <a href="https://www.alibaba.com/product-detail/Vietnam-Origin-Air-Dried-Soft-Papaya_10000043901743.html" target="_blank" class="citation">[Source]</a></p></div>
+</div>
+</div>
+
+<div class="section-card" id="sec7">
+<h2 class="section-title"><i class="fa-solid fa-tags"></i> Chương 7: Phân tích giá bán</h2>
+<div class="pricing-grid">
+<div class="chart-box"><canvas id="priceChart"></canvas></div>
+<div class="potential-box">
+<h4><i class="fa-solid fa-star"></i> Tiềm năng lợi nhuận</h4>
+<p>Dòng đu đủ sấy dẻo (Soft-dried) và sấy lạnh (FD) mang lại biên lợi nhuận cao nhất, giá trị xuất khẩu cao gấp 5-10 lần so với quả tươi nguyên liệu. <a href="https://www.tridge.com/tridge-woods/fresh-papaya/VN" target="_blank" class="citation">[Source]</a></p>
+</div>
+</div>
+<h3 class="sub-title">Phân khúc giá theo danh mục sản phẩm</h3>
+<div class="table-container">
+<table>
+<thead><tr><th>Phân loại</th><th>Dải giá (USD/kg)</th><th>MOQ</th><th>Ghi chú thị trường</th></tr></thead>
+<tbody>
+<tr><td>Đu đủ tươi (Fresh)</td><td>$0.35 - $1.20</td><td>1-5 tấn</td><td>Giá biến động theo mùa vụ và kích thước quả. <a href="https://www.tridge.com/tridge-woods/fresh-papaya/VN" target="_blank" class="citation">[Source]</a></td></tr>
+<tr><td>Đu đủ đông lạnh (Frozen)</td><td>$0.70 - $3.60</td><td>10 tấn</td><td>Dùng cho công nghiệp thực phẩm, giá ổn định hơn. <a href="https://www.accio.com/plp/papaya-price-in-vietnam" target="_blank" class="citation">[Source]</a></td></tr>
+<tr><td>Đu đủ sấy dẻo (Dried)</td><td>$4.00 - $17.00</td><td>100 kg</td><td>Dải giá rộng tùy theo công nghệ sấy và bao bì. <a href="https://www.accio.com/plp/papaya-price-in-vietnam" target="_blank" class="citation">[Source]</a></td></tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:0.82rem;color:#7B8794;">* Lưu ý: Giá trên là giá FOB tham khảo tại cảng Việt Nam, có thể thay đổi tùy theo thời điểm và số lượng đặt hàng.</p>
+</div>
+
+<div class="section-card" id="sec8">
+<h2 class="section-title"><i class="fa-solid fa-rocket"></i> Chương 8: Chiến lược & Ghi chú nghiên cứu</h2>
+<p>Dựa trên phân tích dữ liệu, chúng tôi đề xuất 3 trụ cột chiến lược để bứt phá doanh thu cho ngành đu đủ Việt Nam trên Alibaba.com:</p>
+<div class="strategy-grid">
+<div class="strategy-card"><span class="strategy-no">01</span><h4>Tập trung Chế biến sâu</h4><p>Đẩy mạnh dòng sấy dẻo không đường và sấy lạnh để nhắm đến phân khúc cao cấp tại EU/Bắc Mỹ.</p></div>
+<div class="strategy-card"><span class="strategy-no">02</span><h4>Xây dựng Câu chuyện Nguồn gốc</h4><p>Sử dụng các chứng chỉ GlobalGAP, Organic để tạo niềm tin tuyệt đối về VSATTP.</p></div>
+<div class="strategy-card"><span class="strategy-no">03</span><h4>Tối ưu hóa Phản hồi RFQ</h4><p>Thiết lập đội ngũ phản hồi nhanh trong 2h và cung cấp mẫu thử (sample) linh hoạt để chốt đơn.</p></div>
+</div>
+<div class="highlight strategy-highlight">
+<strong>Kết luận:</strong> Cơ hội cho đu đủ Việt Nam trên Alibaba.com là rất lớn, đặc biệt khi các đối thủ lớn như Mexico đang gặp thách thức về chi phí logisitics sang Châu Á và Trung Đông. <a href="https://ask.ifas.ufl.edu/publication/FE913" target="_blank" class="citation">[Source]</a>
+</div>
+<div class="research-notes">
+<h3><i class="fa-solid fa-magnifying-glass-chart"></i> Ghi chú nghiên cứu</h3>
+<div class="table-container">
+<table class="source-table">
+<thead><tr><th>Nguồn tham khảo</th><th>Dữ liệu thu thập</th><th>Link</th></tr></thead>
+<tbody>
+<tr><td>Alibaba.com Supplier Search</td><td>Dữ liệu 10+ nhà cung cấp Việt Nam</td><td><a href="https://www.alibaba.com/trade/search?SearchText=vietnam+papaya+supplier" target="_blank">Truy cập</a></td></tr>
+<tr><td>Alibaba.com Product Search</td><td>Dữ liệu 30+ sản phẩm và giá FOB</td><td><a href="https://www.alibaba.com/trade/search?SearchText=vietnam+papaya+fruit" target="_blank">Truy cập</a></td></tr>
+<tr><td>Tridge Market Data</td><td>Biểu đồ xuất khẩu và thị phần quốc gia</td><td><a href="https://www.tridge.com/market-overview/fresh-papaya" target="_blank">Truy cập</a></td></tr>
+<tr><td>Market Research Future</td><td>Quy mô thị trường đu đủ toàn cầu 2025-2035</td><td><a href="https://www.marketresearchfuture.com/reports/papaya-market-22634" target="_blank">Truy cập</a></td></tr>
+</tbody>
+</table>
+</div>
+<h3 style="font-size: 0.9rem; margin-top: 1.5rem;"><i class="fa-solid fa-link"></i> Danh sách nguồn tham khảo (Reference List)</h3>
+<ol style="font-size: 0.82rem; line-height: 1.8;">
+<li><strong>Nhà cung cấp:</strong> <a href="https://vietseafarm.trustpass.alibaba.com" target="_blank">Viet Seafarm - Alibaba Store</a>, <a href="https://99golddata.trustpass.alibaba.com" target="_blank">99 Gold Data - Alibaba Store</a></li>
+<li><strong>Sản phẩm:</strong> <a href="https://www.alibaba.com/product-detail/Delicious-Vietnamese-Fresh-Papaya-Red-and_10000035917450.html" target="_blank">Fresh Papaya Listing</a>, <a href="https://www.alibaba.com/product-detail/Vietnam-Origin-Air-Dried-Soft-Papaya_10000043901743.html" target="_blank">Soft Dried Papaya Listing</a></li>
+<li><strong>Dữ liệu giá:</strong> <a href="https://www.accio.com/plp/papaya-price-in-vietnam" target="_blank">Papaya Bulk Price Vietnam</a></li>
+<li><strong>Nghiên cứu thị trường:</strong> <a href="https://ask.ifas.ufl.edu/publication/FE913" target="_blank">Global Papaya Trade Analysis</a></li>
+</ol>
+</div>
+</div>
+
+<footer>
+<div class="footer-grid">
+<div class="footer-brand-block">
+<div class="footer-logo"><i class="fa-solid fa-leaf"></i><span>Alibaba B2B Expert</span></div>
+<p>Báo cáo này được thiết kế để hỗ trợ các doanh nghiệp nông sản Việt Nam tối ưu hóa chiến lược bán hàng trên kênh thương mại điện tử xuyên biên giới.</p>
+</div>
+<div class="footer-contact-card">
+<h3>THÔNG TIN LIÊN HỆ</h3>
+<p class="fc-name">Dương Viết Hải (Frank)</p>
+<a class="footer-action" href="mailto:duong.viet-hai@alibaba-inc.com"><i class="fa-solid fa-envelope"></i><span>duong.viet-hai@alibaba-inc.com</span></a>
+<a class="footer-action" href="tel:+84372811507"><i class="fa-solid fa-phone"></i><span>0372811507</span></a>
+</div>
+</div>
+<div class="foot-bottom"><span>&copy; 2026 Frank | Phoenix-B2B Report</span><span>Ngôn ngữ: Tiếng Việt</span></div>
+</footer>
+</div>
+<script>
+    function initChart(canvasId, config) {
+      var canvas = document.getElementById(canvasId); if (!canvas) return null;
+      config.options = config.options || {};
+      config.options.responsive = true;
+      config.options.maintainAspectRatio = false;
+      return new Chart(canvas.getContext('2d'), config);
+    }
+    try {
+      initChart('shareChart', { type: 'doughnut', data: { labels: ['Mexico','Brazil','Belize','Khác'], datasets: [{ data: [45,15,10,30], backgroundColor:['#D4A017','#1F75FE','#27AE60','#E0E6F2'] }] }, options: { plugins: { title: { display: true, text: 'Thị phần xuất khẩu toàn cầu (%)' } } } });
+      initChart('growthChart', { type: 'line', data: { labels: ['2023','2024','2025','2026*'], datasets: [{ label: 'Giá trị thị trường (Tỷ USD)', data: [14.5,15.2,16.27,17.1], borderColor: '#1F75FE', tension: 0.3 }] }, options: { plugins: { title: { display: true, text: 'Xu hướng thị trường Đu đủ' } } } });
+      initChart('exportCountriesChart', { type: 'bar', data: { labels: ['Mexico','Brazil','USA','Thailand','Vietnam'], datasets: [{ label: 'Khối lượng (Tấn)', data: [206000,43900,13800,12000,8500], backgroundColor: '#27AE60' }] }, options: { indexAxis: 'y', plugins: { title: { display: true, text: 'Top 5 Quốc gia xuất khẩu' } } } });
+      initChart('importCountriesChart', { type: 'bar', data: { labels: ['USA','Portugal','Canada','Singapore','Netherlands'], datasets: [{ label: 'Tỷ lệ nhập khẩu (%)', data: [43,8.8,5.3,8.3,4.2], backgroundColor: '#D4A017' }] }, options: { indexAxis: 'y', plugins: { title: { display: true, text: 'Top 5 Thị trường nhập khẩu' } } } });
+      initChart('priceChart', { type: 'bar', data: { labels: ['Fresh','Frozen','Dried'], datasets: [{ label: 'Giá thấp nhất', data: [0.35,0.7,4.0], backgroundColor: '#E0E6F2' },{ label: 'Giá cao nhất', data: [1.2,3.6,17.0], backgroundColor: '#1F75FE' }] }, options: { scales: { y: { beginAtZero: true } }, plugins: { title: { display: true, text: 'Dải giá FOB tham khảo (USD/kg)' } } } });
+    } catch(e) { console.error(e); }
+  </script>
+</body>
+</html>
